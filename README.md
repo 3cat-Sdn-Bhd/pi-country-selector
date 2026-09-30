@@ -1,16 +1,10 @@
 # pi-gato-knowledge-reader
 
-Pi extension. It applies the [gato-knowledge](https://github.com/3cat-Sdn-Bhd/gato-knowledge)
-country filter over pi's native `AGENTS.md` and `.agents/skills/` discovery.
+Pi extension. It filters [gato-knowledge](https://github.com/3cat-Sdn-Bhd/gato-knowledge) content
+for one country (`MY` default, or `PH`) before it reaches the model:
 
-Pi itself, without this extension, loads `AGENTS.md` into the system prompt, lists every
-`.agents/skills/<name>/SKILL.md` in an `<available_skills>` catalog, and reads skill files with
-its built-in `read` tool. This extension does none of that. It only filters the content pi
-produces, for the selected country (`MY` default, or `PH`):
-
-- The system prompt, so `AGENTS.md` and every skill description are filtered. A skill whose
-  description is written wholly as `my[...]` is absent from the catalog under `PH`.
-- Every `read` of `AGENTS.md` or a file under `.agents/skills/`. Other files are untouched.
+- the system prompt, so `AGENTS.md` and every skill description in the catalog are filtered.
+  A skill whose description is written wholly as `my[...]` is absent from the catalog under `PH`.
 
 Directive syntax:
 
@@ -29,8 +23,6 @@ In the Gato project `.pi/settings.json`:
 ```json
 { "packages": ["git:github.com/3cat-Sdn-Bhd/pi-gato-knowledge-reader"] }
 ```
-
-Start pi from the folder that contains `AGENTS.md` and `.agents/skills/`.
 
 ## Test
 
