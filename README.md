@@ -1,4 +1,4 @@
-# pi-gato-knowledge-reader
+# pi-country-selector
 
 Pi extension. It filters [gato-knowledge](https://github.com/3cat-Sdn-Bhd/gato-knowledge) content
 for one country (`MY` default, or `PH`) before it reaches the model:
@@ -21,7 +21,7 @@ saved in the session and shown in the footer as `country: MY`.
 In the Gato project `.pi/settings.json`:
 
 ```json
-{ "packages": ["git:github.com/3cat-Sdn-Bhd/pi-gato-knowledge-reader"] }
+{ "packages": ["git:github.com/3cat-Sdn-Bhd/pi-country-selector"] }
 ```
 
 ## Test
